@@ -4,6 +4,7 @@ import { moods } from "./data/moods";
 import Mood from "./components/mood/mood";
 import MoodHistory from "./components/moodHistory/moodHistory";
 import MoodButtons from "./components/moodButtons/moodButtons";
+import MoodCounter from "./components/moodCounter/moodCounter";
 import Button from "./components/button/button";
 
 function App() {
@@ -12,10 +13,19 @@ function App() {
     emoji: "😐",
   });
   const [history, setHistory] = useState([]);
+  const [moodCounts, setMoodCounts] = useState({
+    Happy: 0,
+    Sad: 0,
+    Angry: 0,
+  });
 
   const handleMoodSelect = (selectedMood) => {
     setMood(selectedMood);
     setHistory([...history, selectedMood]);
+    setMoodCounts(prev => ({
+      ...prev,
+      [selectedMood.mood]: prev[selectedMood.mood] + 1
+    }));
   };
 
   const handleReset = () => {
@@ -24,12 +34,18 @@ function App() {
       emoji: "😐",
     });
     setHistory([]);
+    setMoodCounts({
+      Happy: 0,
+      Sad: 0,
+      Angry: 0,
+    });
   };
 
   return (
     <div className="App">
       <Mood {...mood} />
       <MoodHistory moods={history} />
+      <MoodCounter moods={moods} moodCounts={moodCounts} />
       <MoodButtons moods={moods} onMoodSelect={handleMoodSelect} />
       <Button variant="reset" onClick={handleReset}>
         Reset
