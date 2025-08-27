@@ -1,14 +1,11 @@
 import "./button.css";
 
-export default ({ mood = "happy", emoji = "😀", onClick, className = "", ...props }) => {
-  const curMood = String(mood).toLowerCase();
-  const cls = `btn btn--${curMood} ${className}`.trim();
-
-  const handleClick = () => onClick?.({ mood, emoji });
+export default ({ variant = "default", onClick, className = "", children, ...props }) => {
+  const cls = `btn btn--${variant} ${className}`.trim();
 
   return (
-    <button className={cls} onClick={handleClick} {...props}>
-      {emoji} {mood}
+    <button className={cls} onClick={onClick} {...props}>
+      {children}
     </button>
   );
 };
