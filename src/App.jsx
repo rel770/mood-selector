@@ -41,12 +41,21 @@ function App() {
     });
   };
 
+  const handleRandomMood = () => {
+    const randomIdx = Math.floor(Math.random() * moods.length);
+    const randomMood = moods[randomIdx];
+    handleMoodSelect(randomMood);
+  };
+
   return (
     <div className="App">
       <Mood {...mood} />
       <MoodHistory moods={history} />
       <MoodCounter moods={moods} moodCounts={moodCounts} />
       <MoodButtons moods={moods} onMoodSelect={handleMoodSelect} />
+      <Button variant="random" onClick={handleRandomMood}>
+        Random 
+      </Button>
       <Button variant="reset" onClick={handleReset}>
         Reset
       </Button>
