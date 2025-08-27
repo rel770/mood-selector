@@ -1,4 +1,7 @@
 .mood-history-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
