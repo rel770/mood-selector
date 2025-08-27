@@ -30,6 +30,11 @@
   background-color: red;
 }
 
+.btn--reset {
+  background-color: #666;
+  margin-top: 1rem;
+}
+
 .btn:hover {
   filter: brightness(0.92);
 }
