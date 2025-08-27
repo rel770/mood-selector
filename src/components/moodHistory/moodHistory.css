@@ -1,0 +1,14 @@
+.mood-history-title {
+  text-align: center;
+}
+
+.mood-history {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.mood-history-item {
+  padding: 0.5rem;
+  font-size: smaller;
+}
