@@ -1,6 +1,7 @@
 import "./mood.css";
-function Mood({ mood = "😐 Neutral" }) {
-  return <h1 id="mood">{mood}</h1>;
-}
 
-export default Mood;
+export default ({ mood = "Neutral", emoji = "😐" }) => (
+  <h1 id="mood">
+    {emoji} {mood}
+  </h1>
+);
