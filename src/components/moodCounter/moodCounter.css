@@ -1,0 +1,17 @@
+.mood-counter {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.mood-counter-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.mood-counter-items {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
