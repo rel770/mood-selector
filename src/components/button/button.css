@@ -1,0 +1,35 @@
+.btn {
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: filter 120ms ease, transform 120ms ease;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus {
+  outline: 3px solid rgba(0, 0, 0, 0.12);
+  outline-offset: 2px;
+}
+
+.btn--happy {
+  background-color: green;
+}
+
+.btn--sad {
+  background-color: orange;
+}
+
+.btn--angry {
+  background-color: red;
+}
+
+.btn:hover {
+  filter: brightness(0.92);
+}
